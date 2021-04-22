@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: nowactions/update-majorver@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.SECRET_TOKEN }}
