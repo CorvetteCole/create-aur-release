@@ -2,7 +2,8 @@
 
 set -o errexit -o pipefail -o nounset
 
-NEW_RELEASE=${GITHUB_REF##*/v}
+NEW_RELEASE=$(echo $GITHUB_REF | sed -rE 's/^[^v]*v([A-Za-z0-9.]*).*/\1/')
+echo "Parsed version: ${NEW_RELEASE}"
 
 export HOME=/home/builder
 
